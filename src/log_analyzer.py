@@ -59,6 +59,9 @@ def parse_record(line):
     event_time = str(re.findall(r'\[(.+?)\]', line)).strip('\'\[').strip('\]\'')
     record["event_time"] = event_time
 
+    parsed_time = get_time(event_time)
+    record["parsed_time"] = parsed_time
+
     # get the resource uri
     resource = None
     http_rec = re.findall(r'\"(.+?)\"', line)
@@ -128,7 +131,7 @@ def analyze_time_window(record):
 
     event_time_str = record["event_time"]
 
-    parsed_time = get_time(event_time_str)
+    parsed_time = record["parsed_time"]
 
     if begin_event_time:
         if parsed_time > end_event_time:
@@ -149,7 +152,7 @@ def analyze_failed_login_attempts(record):
     host = record["host"]
     resource = record["resource"]
     response_code = int(record["response_code"])
-    event_time = get_time(record["event_time"])
+    event_time = record["parsed_time"]
 
     if "/login" not in resource:
         return
