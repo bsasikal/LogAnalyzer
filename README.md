@@ -9,6 +9,7 @@ This application is developed to address Insight Data Engineer Program Challenge
 ### Feature 1 - List the top 10 active host / IP addresses that have accessed the site in descending order.
 
 Input File: log.txt
+
 Output File: hosts.txt
 
 Implementation Details:
@@ -22,6 +23,7 @@ Implementation Details:
 ### Feature 2 - Identify to 10 resources that consume the most bandwidth on the site in descending order
 
 Input File: log.txt
+
 Output File: resources.txt
 
 Assumptions:
@@ -47,6 +49,7 @@ Assumptions:
 In other words, log the 60 minute usage (no of hits) from the time when the event is tracked at a non-overlapping time interval (like a tumbling window).
 
 Input File: log.txt
+
 Output File: hours.txt
 
 Implementation Details:
@@ -63,6 +66,7 @@ Implementation Details:
 ### Feature 4 - Detect patterns of three failed login attempts from the same IP address over 20 seconds so that all further attempts to the site can be blocked for 5 minutes.
 
 Input File: log.txt
+
 Output File: blocked.txt
 
 Implementation Details:
